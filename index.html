@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    Weather is:
+<body >
+    <div class="wrapper" >
+
+        <h1>Weather App</h1>
+        
+        <div class="tab-container">
+            <p class="tab">Your Weather</p>
+            <p class="tab">Search Weather</p>
+        </div>
+
+        <div class="weather-container">
+
+            <!-- grant location container  -->
+            <div class="grant-location-container">
+                <img src="./assests/location.png" width="80" height="88" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow access to get weather Information</p>
+                <button class="btn">Grant Access</button>
+            </div>
+
+            <!-- search form  -->
+            <form class="form-container" data-searchForm>
+                <input placeholder="search for city..." data-searchInput>
+                <button class="btn">
+                    <img src="./assests/search.png" width="80" height="88" loading="lazy">
+                </button>
+            </form>
+
+            <!-- loading screen container  -->
+            <div class="loading-container">
+                <img src="./assests/loading.gif" width="150" height="150">
+            </div>
+
+            <div class="user-info-container">
+
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
