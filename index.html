@@ -12,8 +12,8 @@
         <h1>Weather App</h1>
         
         <div class="tab-container">
-            <p class="tab">Your Weather</p>
-            <p class="tab">Search Weather</p>
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
         </div>
 
         <div class="weather-container">
@@ -41,10 +41,46 @@
 
             <div class="user-info-container">
 
+                <!-- city name and flag  -->
                 <div class="name">
                     <p data-cityName></p>
                     <img data-countryIcon>
                 </div>
+                <!-- weather description  -->
+                 <P data-weatherDesc></P>
+                <!-- weather icon  -->
+                 <img data-weatherIcon>
+
+                 <!-- temperature  -->
+                 <p data-temp></p>
+
+                 <!-- 3 card parameter  -->
+
+                 <div class="parameter-container">
+
+                    <!-- card 1  -->
+                    <div>
+                        <img src="./assests/wind.png" alt="">
+                        <p>Windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <!-- card 2  -->
+                    <div class="parameter">
+                        <img src="./assests/humidity.png" alt="">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <!-- card 3  -->
+                    <div class="parameter">
+                        <img src="./assests/cloud.png" alt="">
+                        <p>Clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+
+                 </div>
+
 
             </div>
 
