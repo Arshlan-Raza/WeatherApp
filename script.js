@@ -13,6 +13,7 @@ const userInfoContainer = document.querySelector(".user-info-container");
 let currentTab = userTab ;
 const API_key = "cc";
 currentTab.classList.add("current-tab");
+getFromSessionStorage();
 
 function switchTab(clickedTab){
     if(clickedTab !=currentTab){
@@ -28,7 +29,7 @@ function switchTab(clickedTab){
          else{
             // main pehle search wale tab pr tha , ab your weather tab visible krna h
             searchForm.classList.remove('active');
-            userInfoContainerContainer.classList.remove('active');
+            userInfoContainer.classList.remove('active');
 
             // ab main your weather tab me aa gya to ab, so displaying the your weather tab 
             getFromSessionStorage();
