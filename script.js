@@ -11,7 +11,7 @@ const userInfoContainer = document.querySelector(".user-info-container");
 // Initial variable needed 
 
 let currentTab = userTab ;
-const API_key = "03fe1538c61eb075c2b0eaa4404056ad";
+const API_key = "cc";
 currentTab.classList.add("current-tab");
 
 function switchTab(clickedTab){
@@ -72,10 +72,6 @@ async function fetchUserWeatherInfo(coordinates){
     // calling the api which will fetch me the weather info 
 
     try{
-
-    }
-    catch (err){
-
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
 
         const data = await response.json();
@@ -87,5 +83,99 @@ async function fetchUserWeatherInfo(coordinates){
         // this function will fetch all the values we got after the api call and we will use the one which we need to show in our ui  
         renderWeatherInfo(data);
     }
+    catch (err){
+
+        handleError();
+       
+    }
 
 }
+
+// this function will remove all the displays from the web page
+// function handleError() {
+//     userInfoContainer.classList.remove("active");
+//     loadingScreen.classList.remove("active");
+//     errorContainer.classList.add("active");
+// }
+
+function  renderWeatherInfo(weatherInfo) {
+    
+    //  first we will fetch the  elements 
+    const cityName = document.querySelector("[data-cityName]");
+    const countryIcon = document.querySelector("[data-countryIcon]");
+    const desc = document.querySelector("[data-weatherDesc]");
+    const weatherIcon = document.querySelector("[data-weatherIcon]");
+    const temp = document.querySelector("[data-temp]");
+    const windSpeed = document.querySelector("[data-windSpeed]");
+    const humidity = document.querySelector("[data-humidity]");
+    const cloudiness = document.querySelector("[data-cloudiness]");
+
+    // fetching the values from weatherInfo object and putting it in UI elements  
+    cityName.innerText = weatherInfo?.name;
+    countryIcon.src = `https://flagcdn.com/144x108/${weatherInfo?.sys?.country.toLowerCase()}.png`;
+    desc.innerText = weatherInfo?.weather?.[0]?.description;
+    weatherIcon.src = `http://openweathermap.org/img/w/${weatherInfo?.weather?.[0]?.icon}.png`; 
+    temp.innerText = weatherInfo?.main?.temp;
+    windSpeed.innerText = weatherInfo?.wind?.speed;
+    humidity.innerText = weatherInfo?.main?.humidity;
+    cloudiness.innerText = weatherInfo?.clouds?.all;
+
+}
+
+function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else{
+
+    }
+}
+
+function showPosition(){
+    const userCoordinates = {
+        lat: position.coords.latitude,
+        lon: position.coords.longitude,
+
+    }
+    sessionStorage.setItem("user-coordinates",JSON.stringify(userCoordinates));
+    fetchUserWeatherInfo(userCoordinates);
+}
+
+const grantAccessButton = document.querySelector("[data-grantAccess]");
+grantAccessButton.addEventListener('click',getLocation);
+
+const searchInput = document.querySelector("[data-searchInput]");
+
+searchForm.addEventListener("submit",(e) =>{
+    e.preventDefault();
+    let  cityName = searchInput.value;
+
+    if(cityName==""){
+        return;
+    }
+    else{
+        fetchSearchWeatherInfo(cityName);
+    }
+
+})
+
+async  function fetchSearchWeatherInfo(city){
+    loadingScreen.classList.add('active');
+    userInfoContainer.classList.remove('active');
+    grantAccessContainer.classList.remove('active');
+
+    try{
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`
+        );
+        const data = await response.json();
+        loadingScreen.classList.remove('active');
+        userInfoContainer.classList.add('active'); 
+        renderWeatherInfo(data);
+    }
+    catch (err){
+
+    }
+}
+
+ 
