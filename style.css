@@ -16,7 +16,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Merriweather sans',sans-serif;
+    font-family: Comic Sans MS, Comic Sans, cursive;
     
 }
 
@@ -27,16 +27,16 @@
     --colorLight2: #f9f7f7;
 }
 
-/* body{
-    /* overflow-x: hidden;
-} */ 
+ body{
+  
+}  
 .wrapper{
-    width: 100%n ;
-    height: 100%;
-    /* color: var(--black); */
+    width: 100vw ;
+    height: 100vh;
+    color: 	#000080	;
     background-image: url(./assests/hand.jpg); 
     background-size: cover;
-    
+   overflow: hidden;
 }
 
 /* h1 tag text effect  */
@@ -154,4 +154,175 @@ h1::after {
 .tab.current-tab{
     background-color: rgba(19, 97, 240, 0.5);
     border-radius: 4px;
+}
+
+.weather-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* button  */
+.btn {
+    all: unset;
+    border: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(51, 216, 222);
+    color: black;
+    padding: 7px 10px;
+    margin-bottom: 10px;
+}
+
+.btn,.Srchbtn:hover{
+    background-color: rgb(83, 221, 78);
+    color: white;
+    
+}
+
+/* searchButton  */
+.Srchbtn{
+    all: unset;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(51, 216, 222);
+    /* padding: 7px 10px; */
+    margin-bottom: 10px;
+}
+
+.Srchbtn img{
+    margin: auto;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.sub-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.grant-location-container{
+    display: none;
+}
+.grant-location-container.active{
+    display: flex;
+
+}
+
+.grant-location-container img{
+    margin-top:  2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.grant-location-container p:first-of-type{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.grant-location-container p:last-of-type{
+    font-size: 0.85rem;
+    font-weight:500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+.loading-container p{
+    margin-left: 25%;
+    text-transform: uppercase;
+}
+
+.loading-container img{
+    margin-bottom: -3.5rem;
+}
+
+.user-info-container{
+    /* display: none; */
+}
+.user-info-container.active{
+    display: flex;
+}
+
+.name{
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.name p{
+    font-size: 2rem;
+}
+
+.name img{
+    width: 30px;
+    height: 30px;
+}
+
+.user-info-container p{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.img2{
+    width:70px;
+    height:70px;
+}
+
+.user-info-container p[data-temp]{
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.parameter-container{
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.parameter{
+    width: 30%;
+    max-width: 200px;
+    background-color: aqua;
+    color: rgb(17, 16, 16);
+    border-radius: 5px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap:5px 0;
+    align-items: center;
+}
+
+.parameter img{
+    width: 50px;
+    height: 50px;
+}
+
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
 }
