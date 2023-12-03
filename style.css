@@ -186,14 +186,16 @@ h1::after {
 
 /* searchButton  */
 .Srchbtn{
-    all: unset;
+    padding: unset;
+    width: 30px;
+    height: 30px;
     border: none;
     text-transform: uppercase;
-    border-radius: 5px;
+    border-radius: 100%;
     cursor: pointer;
     background-color: rgb(51, 216, 222);
-    /* padding: 7px 10px; */
-    margin-bottom: 10px;
+    padding: 4px 3.5px;
+    margin-bottom: 1px; 
 }
 
 .Srchbtn img{
@@ -253,7 +255,8 @@ h1::after {
 }
 
 .user-info-container{
-    /* display: none; */
+    display: none;
+    margin-top: 3rem;
 }
 .user-info-container.active{
     display: flex;
@@ -325,4 +328,55 @@ h1::after {
 .parameter p:last-of-type{
     font-size: 1rem;
     font-weight: 200;
+}
+
+.form-container{
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0  10px;
+    /* margin-bottom: 3rem; */
+    margin-top: 30px;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    all: unset;
+    width: calc(100% - 80px);
+    height: 30px;
+    padding: 0 20px;
+    background-color: rgba(0, 238, 255, 0.5);
+    border-radius: 10px;
+}
+
+.form-container input::placeholder{
+    color:black; 
+}
+
+.form-container input::focus{
+    outline: 3px solid rgba(0, 0, 0, 0);
+}
+
+.error-container {
+    display: none;
+    gap: 1rem 0;
+  }
+  .error-container.active {
+    display: flex;
+  }
+  .error-container img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.error-container p{
+    margin-top: -3rem;
 }
