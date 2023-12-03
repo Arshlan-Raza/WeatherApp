@@ -20,7 +20,7 @@
         <div class="weather-container">
 
             <!-- grant location container  -->
-            <div class="grant-location-container">
+            <div class="sub-container grant-location-container">
                 <img src="./assests/placeholder_684908.png" width="80" height="88" loading="lazy">
                 <p>Grant Location Access</p>
                 <p>Allow access to get weather Information</p>
@@ -30,17 +30,18 @@
             <!-- search form  -->
             <form class="form-container" data-searchForm>
                 <input placeholder="search for city..." data-searchInput>
-                <button class="btn">
+                <button class="Srchbtn">
                     <img src="./assests/search.png" width="80" height="88" loading="lazy">
                 </button>
             </form>
 
             <!-- loading screen container  -->
-            <div class="loading-container">
-                <img src="./assests/loading.gif" width="150" height="150">
+            <div class=".sub-container loading-container">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmZhcWZtM3BrcTRkbXltaWhtamF2bXI4cHN4eDNicW9maWF0ZmptaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/rLl1g739pZdE4zlovM/giphy.gif" width="150" height="150">
+                <p>Loading</p>
             </div>
 
-            <div class="user-info-container">
+            <div class="sub-container user-info-container">
 
                 <!-- city name and flag  -->
                 <div class="name">
@@ -50,7 +51,7 @@
                 <!-- weather description  -->
                  <P data-weatherDesc></P>
                 <!-- weather icon  -->
-                 <img data-weatherIcon>
+                 <img class="img2" data-weatherIcon>
 
                  <!-- temperature  -->
                  <p data-temp></p>
@@ -60,22 +61,22 @@
                  <div class="parameter-container">
 
                     <!-- card 1  -->
-                    <div>
-                        <img src="./assests/wind.png" alt="">
+                    <div class="parameter">
+                        <img src="./assests/icons8-wind-100.png" alt="">
                         <p>Windspeed</p>
                         <p data-windSpeed></p>
                     </div>
 
                     <!-- card 2  -->
                     <div class="parameter">
-                        <img src="./assests/humidity.png" alt="">
+                        <img src="./assests/icons8-humidity-64.png" alt="">
                         <p>Humidity</p>
                         <p data-humidity></p>
                     </div>
 
                     <!-- card 3  -->
                     <div class="parameter">
-                        <img src="./assests/cloud.png" alt="">
+                        <img src="./assests/icons8-clouds-100.png" alt="">
                         <p>Clouds</p>
                         <p data-cloudiness></p>
                     </div>
