@@ -380,3 +380,13 @@ h1::after {
 .error-container p{
     margin-top: -3rem;
 }
+
+@media screen and (max-width: 420px) {
+    .parameter-container {
+      max-width: 90%;
+      flex-wrap: wrap;
+    }
+    .parameter {
+      width: 100%;
+    }
+  }
